@@ -1,9 +1,9 @@
-variable "openstack-user" {}
-variable "openstack-project" {}
-variable "openstack-user-password" {}
+variable "user" {}
+variable "project" {}
+variable "password" {}
 provider "openstack" {
-  user_name   = "${var.openstack-user}"
-  tenant_name = "${var.openstack-project}"
-  password    = "${var.openstack-user-password}"
+  user_name   = "${var.user}"
+  tenant_name = "${var.project}"
+  password    = "${var.password}"
   auth_url    = "https://keystone-yyc.cloud.cybera.ca:5000/v2.0"
 }
