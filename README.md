@@ -34,13 +34,14 @@ You will be prompted during the script to create passwords for the MySQL databas
 # sudo reboot now
 ```
 The machine should reboot fairly quickly. Test the installation by navigating to the guacamole dashboard with your browser and logging in with the default user-name/password:
-User: guacadmin
-Password: guacadmin
-Address: http://<floating_ip_address>:8080/guacamole
+    User: guacadmin
+    Password: guacadmin
+    Address: http://<floating_ip_address>:8080/guacamole
 7. Change the default password and address quirks of the system:
-  a) In the top-right corner click the user navigation button, labelled with the current ‘guacadmin’ user and then click Settings.
-  b) Select the Preferences tab from along the top of the Settings panel and update your password.
-  c) Create two “dummy” connections. Guacamole will auto-login with the only connection, and by default will associate that one connection with all users, and if there is a problem with that connection, it is possible to get trapped in a login-loop in which accessing the dashboard can be difficult. See Creating a connection below, and instead of filling out any of the values, just give the connection a name, such as null0 or null1, and save the connection.
+
+    a) In the top-right corner click the user navigation button, labelled with the current ‘guacadmin’ user and then click Settings.
+    b) Select the Preferences tab from along the top of the Settings panel and update your password.
+    c) Create two “dummy” connections. Guacamole will auto-login with the only connection, and by default will associate that one connection with all users, and if there is a problem with that connection, it is possible to get trapped in a login-loop in which accessing the dashboard can be difficult. See Creating a connection below, and instead of filling out any of the values, just give the connection a name, such as null0 or null1, and save the connection.
 
 ## Configuring guacamole users and connections
 ### User creation
@@ -48,12 +49,12 @@ Address: http://<floating_ip_address>:8080/guacamole
 2. Select the Users tab from along the top of the Settings panel then click the + New User button.
 3. Fill out the username and password fields as needed. The Account Restrictions are optional.
 4. For permissions, the following is recommended for users to be able to log in and create their own connections:
-Administer system:			✕
-Create new users:			✕
-Create new connections:		✓
-Create new connection groups:	✕
-Create new sharing profiles:		✕
-Change own password:		✓
+    Administer system:			    ✕
+    Create new users:			    ✕
+    Create new connections:		    ✓
+    Create new connection groups:	✕
+    Create new sharing profiles:	✕
+    Change own password:		    ✓
 5. Once the first user is created, each subsequent user can be created with the Clone button at the bottom of the page.
 
 ### Connection creation
