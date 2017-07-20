@@ -5,42 +5,38 @@ Guacamole is an HTML5-based clientless remote desktop gateway. It proxies connec
 This document will detail how to deploy an instance in Cybera’s Rapid Access Cloud that will host guacamole and provide RDP access. There are example instructions on creating users and connections at the end of the document that detail how to use guacamole with RDP.
 
 Requirements:
-A Cybera Rapid Access Cloud account
-Terraform v0.9.7 or higher
-Wget
+ - a Cybera Rapid Access Cloud account
+ - terraform v0.9.7 or higher
+ - wget
+
+## Deploying guacamole instance
 
 Note: the examples below assume a Unix-type environment like Linux or macOS.
 
-Deploying guacamole instance
-Requirements:
-A Cybera Rapid Access Cloud account
-Terraform v0.9.7 or higher
-wget
-
-Note: the examples below assume a Unix-type environment like Linux or macOS.
-
-From a command-line, create a working directory (this example creates the working directory in your home directory). This is the directory you will run terraform from to build the guacamole server.
+1. From a command-line, create a working directory (this example creates the working directory in your home directory). This is the directory you will run terraform from to build the guacamole server.
 ```
 # mkdir ~/guacproxy
 ```
 
-Change to the working directory created in 1) and download the following files from Cybera’s GitHub-hosted repository:
+2. Change to the working directory created in 1) and download the following files from Cybera’s GitHub-hosted repository:
 ```
 # cd guacproxy/
 # wget https://raw.githubusercontent.com/cybera/rac-guacproxy/master/deploy.tf
 # wget https://raw.githubusercontent.com/cybera/rac-guacproxy/master/provider.tf
 # wget https://raw.githubusercontent.com/cybera/rac-guacproxy/master/terraform.tfvars
 ```
-Modify ~/guacproxy/terraform.tfvars and include your Rapid Access Cloud username and password, and the project that this instance should be associated with (see examples at the end of the document).
+3. Modify ~/guacproxy/terraform.tfvars and include your Rapid Access Cloud username and password, and the project that this instance should be associated with (see examples at the end of the document).
 
-Run terraform to provision the instance: # terraform plan # terraform apply
+4. Run terraform to provision the instance: # terraform plan # terraform apply
 
-Once terraform is completed you will see an output message:
+5. Once terraform is completed you will see an output message:
+```
 ssh to guacproxy using 'ssh -i /path/to/id_rsa ubuntu@<floating_ip_address>’,
 run /home/ubuntu/guac-install.sh as root 'sudo ./guac-install.sh',
 You will be prompted during the script to create passwords for the MySQL database and guacdb.
+```
 
-Once guac-install.sh has been run, reboot the machine:
+6. Once guac-install.sh has been run, reboot the machine:
 ```
 # sudo reboot now
 ```
@@ -49,7 +45,7 @@ User: guacadmin
 Password: guacadmin
 Address: http://<floating_ip_address>:8080/guacamole
 
-Change the default password and address quirks of the system:
+7. Change the default password and address quirks of the system:
 In the top-right corner click the user navigation button, labelled with the current ‘guacadmin’ user and then click Settings.
 Select the Preferences tab from along the top of the Settings panel and update your password.
 Create two “dummy” connections. Guacamole will auto-login with the only connection, and by default will associate that one connection with all users, and if there is a problem with that connection, it is possible to get trapped in a login-loop in which accessing the dashboard can be difficult. See Creating a connection below, and instead of filling out any of the values, just give the connection a name, such as null0 or null1, and save the connection.
