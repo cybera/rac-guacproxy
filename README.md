@@ -46,9 +46,9 @@ Password: guacadmin
 Address: http://<floating_ip_address>:8080/guacamole
 
 7. Change the default password and address quirks of the system:
-In the top-right corner click the user navigation button, labelled with the current ‘guacadmin’ user and then click Settings.
-Select the Preferences tab from along the top of the Settings panel and update your password.
-Create two “dummy” connections. Guacamole will auto-login with the only connection, and by default will associate that one connection with all users, and if there is a problem with that connection, it is possible to get trapped in a login-loop in which accessing the dashboard can be difficult. See Creating a connection below, and instead of filling out any of the values, just give the connection a name, such as null0 or null1, and save the connection.
+  a) In the top-right corner click the user navigation button, labelled with the current ‘guacadmin’ user and then click Settings.
+  b) Select the Preferences tab from along the top of the Settings panel and update your password.
+  c) Create two “dummy” connections. Guacamole will auto-login with the only connection, and by default will associate that one connection with all users, and if there is a problem with that connection, it is possible to get trapped in a login-loop in which accessing the dashboard can be difficult. See Creating a connection below, and instead of filling out any of the values, just give the connection a name, such as null0 or null1, and save the connection.
 
 
 ```
