@@ -9,12 +9,6 @@
 user       = ""
 project    = ""
 password   = ""
-key-pair   = ""
-
-# Private key associated with ${var.key-pair} above
-#${var.ssh-private-key}
-
-ssh-private-key      = ""
 
 # Remote administrator cidr
 # Default is '0.0.0.0/0 & ::0' meaning that by default ssh access to the instance is open to all IP addresses
