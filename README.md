@@ -22,7 +22,11 @@ Note: the examples below assume a Unix-type environment like Linux or macOS.
 # wget https://raw.githubusercontent.com/cybera/rac-guacproxy/master/terraform.tfvars
 ```
 3. Modify ~/guacproxy/terraform.tfvars and include your Rapid Access Cloud username and password, and the project that this instance should be associated with (see examples at the end of the document).
-4. Run terraform to provision the instance: # terraform plan # terraform apply
+4. Run terraform to provision the instance:
+```
+# terraform plan
+# terraform apply
+```
 5. Once terraform is completed you will see an output message:
 ```
 "capture the private-key output above in a file, 'terraform output private-key > secrets/guac-proxy.key'",
