@@ -1,19 +1,26 @@
-# Guacamole HTML5 RDP Proxy Variables
+# Guacamole HTML5 Clientless Remote Desktop Gateway
+# Configuration variables
 
+### REQUIRED ###
 # OpenStack variables
-# ${var.user}
-# ${var.project}
-# ${var.password}
-# ${var.key-pair}
+# ${var.openstack-user}
+# ${var.openstack-project}
+# ${var.openstack-password}
 
 user       = ""
 project    = ""
 password   = ""
 
-# Remote administrator cidr
-# Default is '0.0.0.0/0 & ::0' meaning that by default ssh access to the instance is open to all IP addresses
-# ${var.allowed-cidr-v4}
-# ${var.allowed-cidr-v6}
+### OPTIONAL ###
+# Openstack flavor (instance size)
+# ${var.server_size}
 
-# allowed-cidr-v4 = ""
-# allowed-cidr-v6 = ""
+# server_size = ""
+
+# Remote administrator cidr
+# Default is '0.0.0.0/0' & '::0' meaning that by default ssh access to the instance is open to all IP addresses
+# ${var.allowed_cidr_v4}
+# ${var.allowed_cidr_v6}
+
+# allowed_cidr_v4 = ""
+# allowed_cidr_v6 = ""

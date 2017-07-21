@@ -29,8 +29,7 @@ Note: the examples below assume a Unix-type environment like Linux or macOS.
 ```
 5. Once terraform is completed you will see an output message:
 ```
-"capture the private-key output above in a file, 'terraform output private-key > secrets/guac-proxy.key'",
-"ssh to guac-proxy using 'ssh -i secrets/guac-proxy.key ubuntu@<floating_ip_address>'",
+"ssh to guac-proxy using 'ssh -i guac-proxy.key ubuntu@<floating_ip_address>'",
 "run /home/ubuntu/guac-install.sh as root 'sudo ./guac-install.sh'",
 "You will be prompted during the script to create passwords.",
 "'terraform output instructions' can be used to print out this message again."
