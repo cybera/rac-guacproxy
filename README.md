@@ -32,7 +32,7 @@ Note: the examples below assume a Unix-type environment like Linux or macOS.
 5. Once terraform is completed you will see an output message with instructions to follow:
 - Ssh into guac-proxy VM using:
 ```
-# ssh -i secrets/guac-proxy.key ubuntu@<floating_ip_address>
+# ssh -i guac-proxy.key ubuntu@<floating_ip_address>
 ```
  - Install guac on the VM:
 ```
